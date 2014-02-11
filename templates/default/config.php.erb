@@ -1,0 +1,50 @@
+<?php
+###############################
+## ResourceSpace
+## Local Configuration Script
+###############################
+
+# All custom settings should be entered in this file.
+# Options may be copied from config.default.php and configured here.
+
+# MySQL database settings
+<% node['resourcespace']['config']['mysql'].each do |key, val| %>
+$<%= key %> = '<%= val %>';
+<% end %>
+
+$mysql_bin_path = '/usr/bin';
+
+# Base URL of the installation
+$baseurl = '<%= node['resourcespace']['config']['baseurl'] %>';
+
+# Email settings
+<% node['resourcespace']['config']['email'].each do |key, val| %>
+$<%= key %> = '<%= val %>';
+<% end %>
+
+$spider_password = '<%= node['resourcespace']['config']['spider_password'] %>';
+$scramble_key = '<%= node['resourcespace']['config']['scramble_key'] %>';
+
+$api_scramble_key = '<%= node['resourcespace']['config']['api_scramble_key'] %>';
+
+# Paths
+$imagemagick_path = '/usr/bin';
+$ghostscript_path = '/usr/bin';
+$ffmpeg_path = '/usr/bin';
+$exiftool_path = '/usr/bin';
+$antiword_path = '/usr/bin';
+$pdftotext_path = '/usr/bin';
+
+$ftp_server = 'my.ftp.server';
+$ftp_username = 'my_username';
+$ftp_password = 'my_password';
+$ftp_defaultfolder = 'temp/';
+$thumbs_display_fields = array(8,3);
+$list_display_fields = array(8,3,12);
+$sort_fields = array(12);
+
+<% if node['resourcespace']['config']['others'] %>
+<% node['resourcespace']['config']['others'].each do |key, val| %>
+$<%= key %> = '<%= val %>';
+<% end %>
+<% end %>
