@@ -1,10 +1,10 @@
 # chef-resourcespace-cookbook
 
-TODO: Enter the cookbook description here.
+Installs and configures resourcespace
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Tested on Ubuntu 12.04
 
 ## Attributes
 
