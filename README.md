@@ -51,6 +51,18 @@ TODO: List your supported platforms.
     <td>Make sure to create a secure one!</td>
     <td>n/a (required)</td>
   </tr>
+  <tr>
+    <td><tt>['resourcespace']['revision']</tt></td>
+    <td>String</td>
+    <td>revision of the resourcespace source to checkout</td>
+    <td>HEAD</td>
+  </tr>
+  <tr>
+    <td><tt>['resourcespace']['root_dir']</tt></td>
+    <td>String</td>
+    <td>Directory to place the resourcespace installation</td>
+    <td>/var/www/resourcespace</td>
+  </tr>
 </table>
 
 ## Usage
