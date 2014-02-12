@@ -63,6 +63,12 @@ TODO: List your supported platforms.
     <td>Directory to place the resourcespace installation</td>
     <td>/var/www/resourcespace</td>
   </tr>
+  <tr>
+    <td><tt>'resourcespace']['config']['others']</tt></td>
+    <td>Hash</td>
+    <td>Other resourcespace configurations</td>
+    <td>none (optional)</td>
+  </tr>
 </table>
 
 ## Usage
