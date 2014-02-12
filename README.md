@@ -51,6 +51,24 @@ Tested on Ubuntu 12.04
     <td>Make sure to create a secure one!</td>
     <td>n/a (required)</td>
   </tr>
+  <tr>
+    <td><tt>['resourcespace']['config']['others']</tt></td>
+    <td>Hash</td>
+    <td>Place additional resourcespace configuration here</td>
+    <td>none (optional)</td>
+  </tr>
+  <tr>
+    <td><tt>['resourcespace']['revision']</tt></td>
+    <td>String</td>
+    <td>Revision of the resourcespace code to checkout</td>
+    <td>HEAD</td>
+  </tr>
+  <tr>
+    <td><tt>['resourcespace']['root_dir']</tt></td>
+    <td>String</td>
+    <td>Directory where the resourcespace source would be located</td>
+    <td>/var/www/resourcespace</td>
+  </tr>
 </table>
 
 ## Usage
