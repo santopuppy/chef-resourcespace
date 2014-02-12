@@ -28,22 +28,22 @@ mysql_connection_info = { host:      node['resourcespace']['mysql_server'],
 subversion "ResourceSpace" do
   repository "http://svn.montala.net/svn/resourcespace"
   revision node['resourcespace']['revision']
-  destination "/var/www/resourcespace"
+  destination node['resourcespace']['root_dir']
   group "root"
   user "root"
   action :checkout
 end
 
-directory "/var/www/resourcespace" do
+directory node['resourcespace']['root_dir'] do
   group "www-data"
   user "www-data"
 end
 
-directory "/var/www/resourcespace/include" do
+directory "#{node['resourcespace']['root_dir']}/include" do
   mode '755'
 end
 
-template "/var/www/resourcespace/include/config.php" do
+template "#{node['resourcespace']['root_dir']}/include/config.php" do
   source "config.php.erb"
 end
 
@@ -51,14 +51,14 @@ template "/etc/php5/apache2/php.ini" do
   source "php.ini.erb"
 end
 
-directory "/var/www/resourcespace/filestore" do
+directory "#{node['resourcespace']['root_dir']}/filestore" do
   mode '777'
-  not_if { File.exist?("/var/www/resourcespace/filestore") }
+  not_if { File.exist?("#{node['resourcespace']['root_dir']}/filestore") }
 end
 
 web_app "resourcespace" do
   server_name "resourcespace"
-  docroot "/var/www/resourcespace"
+  docroot node['resourcespace']['root_dir']
   log_dir node['apache']['log_dir']
 end
 
