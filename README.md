@@ -120,7 +120,7 @@ config.vm.provision :chef_solo do |chef|
   }
 end
 ```
-
+When asked for a login, Resourcespace's default username and password is admin
 
 ## Contributing
 
